@@ -13,7 +13,7 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import StaffSection from "../pages/StaffSection";
 
 const SwaadsetuLanding: React.FC = () => {
-  const [activeSection, setActiveSection] = useState("home");
+  const [, setActiveSection] = useState("home");
 
   // Intersection Observer for scroll animations
   useEffect(() => {

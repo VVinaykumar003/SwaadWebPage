@@ -210,7 +210,7 @@ export function CustomerSection() {
 
             {/* Progress dots */}
             <div className="flex gap-2">
-              {features.map((f, i) => (
+              {features.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}

@@ -17,19 +17,9 @@ type CategoryId =
 const FAQ: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("general");
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
-  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleFAQ = (id: string) => {
     setOpenItems((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-
-  const onSearch = () => {
-    if (!searchTerm.trim()) return;
-    // optional: you can filter in-memory instead of DOM querying
-  };
-
-  const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
-    if (e.key === "Enter") onSearch();
   };
 
   // const categories: { id: CategoryId; label: string }[] = [
