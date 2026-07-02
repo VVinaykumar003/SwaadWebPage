@@ -76,7 +76,7 @@ import grw_4 from "../assets/Growth/img_4.png"
 
 //Home page
 import Zager from "../assets/home/zager_logo.png";
-import Swaad_setu_Logo from "../assets/home/swaad_setu_logo.png";
+import Swaad_setu_Logo from "../assets/home/Swaad_setu_logo.png";
 import Mockup_1 from "../assets/home/Admin_Dashbord_Mockup.png";
 import Mockup_2 from "../assets/home/Admin_Dashbord_Mockup_2.jpeg";
 
@@ -91,13 +91,13 @@ import our_mission_2 from "../assets/about/our_missions_2.png";
 //Features 
 import hero_1 from "../assets/features/F_hero_1.png"
 import hero_2 from "../assets/features/F_hero_2.png"
-import qr_ordering from "../assets/features/01_instant qr ordering.png"
+import qr_ordering from "../assets/features/instant qr ordering.png"
 import real_time_order_2 from "../assets/features/real_time_order_2.png";
-import payments from "../assets/features/03_payments.png";
-import service from "../assets/features/04_service.png";
-import bussiness_insights from "../assets/features/05_business_insight.png";
-import Inventory from "../assets/features/06_inventory.png";
-import QSR from "../assets/features/07_QSR.png";
+import payments from "../assets/features/payments.png";
+import service from "../assets/features/service.png";
+import bussiness_insights from "../assets/features/business_insight.png";
+import Inventory from "../assets/features/inventory.png";
+import QSR from "../assets/features/QSR.png";
 
 
 
