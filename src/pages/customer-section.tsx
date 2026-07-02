@@ -1,4 +1,4 @@
-﻿﻿﻿﻿import { useState, useMemo, memo } from "react";
+﻿﻿﻿﻿﻿﻿import { useState, useMemo, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { QrCode, Clock, FileText, Bell, CreditCard, ArrowRight,  ShieldCheck } from "lucide-react";
@@ -406,7 +406,7 @@ export function CustomerSection() {
 
             {/* Micro Badges Sub Grid Container */}
             <div className="flex flex-wrap gap-2">
-             {currentFeature.badges.map((badge) => (
+             {currentFeature.badges?.map((badge) => (
   <div
     key={badge}
     className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-white/[0.06] bg-slate-900/40 text-[10px] font-semibold tracking-wider text-slate-400 uppercase"

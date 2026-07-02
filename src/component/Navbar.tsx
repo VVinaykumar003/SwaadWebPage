@@ -173,7 +173,7 @@ const Navbar = () => {
             aria-label="SwaadSetu home"
           >
             <img
-              src={Images.SwaadSetuLogo}
+              src={Images.Swaad_setu_Logo}
               alt="SwaadSetu"
               className="h-7 md:h-10 lg:h-12 w-auto object-contain transition-all duration-300"
               loading="eager"
