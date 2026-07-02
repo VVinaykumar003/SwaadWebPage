@@ -96,7 +96,7 @@ import real_time_order_2 from "../assets/features/real_time_order_2.png";
 import payments from "../assets/features/payments.png";
 import service from "../assets/features/service.png";
 import bussiness_insights from "../assets/features/business_insight.png";
-import Inventory from "../assets/features/inventory.png";
+import Inventory from "../assets/features/business_insight.png";
 import QSR from "../assets/features/QSR.png";
 
 
