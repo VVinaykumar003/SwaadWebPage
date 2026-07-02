@@ -136,7 +136,7 @@ const Hero = () => {
         </div>
 
         {/* ══════ RIGHT: FLOATING UI COMPOSITION ══════ */}
-        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[650px] flex items-center justify-center lg:justify-end perspective-1000 mt-10 lg:mt-0 ">
+        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[650px] flex items-center justify-center lg:justify-end perspective-1000 mt-10 lg:mt-0">
            
            {/* Center glow behind images */}
            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-amber-500/20 blur-[100px] rounded-full pointer-events-none" />
@@ -146,7 +146,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: 60, y: -30, rotateY: -15, rotateX: 5 }}
               animate={{ opacity: 1, x: 0, y: 0, rotateY: -15, rotateX: 5 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              className="absolute right-0 sm:right-10 lg:-right-10 top-0 lg:top-10 w-[95%] sm:w-[75%] lg:w-[95%] rounded-2xl sm:rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden bg-[#0a0a0a] z-10 lg:static"
+              className="absolute right-0 sm:right-10 lg:-right-10 top-0 lg:top-10 w-[85%] sm:w-[75%] lg:w-[95%] rounded-2xl sm:rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden bg-[#0a0a0a] z-10"
               style={{ transformStyle: "preserve-3d" }}
            >
               <div className="w-full h-8 bg-black/60 flex items-center px-4 gap-2 border-b border-white/5">
@@ -166,11 +166,11 @@ const Hero = () => {
            <motion.div
               initial={{ opacity: 0, y: 100, x: -60 }}
               animate={{ opacity: 1, y: 30, x: -20 }}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.5 }} 
-              className="absolute left-0 sm:left-10 lg:-left-10 bottom-0 lg:bottom-10 w-[160px] sm:w-[220px] lg:w-[240px] rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-[#111] shadow-[0_30px_60px_rgba(0,0,0,0.9)] overflow-hidden bg-black z-20 ring-1 ring-white/10 hidden sm:block"
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+              className="absolute left-0 sm:left-10 lg:-left-10 bottom-0 lg:bottom-10 w-[160px] sm:w-[220px] lg:w-[200px] rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-[#111] shadow-[0_30px_60px_rgba(0,0,0,0.9)] overflow-hidden bg-black z-20 ring-1 ring-white/10"
            >
               {/* Phone Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 sm:h-5 bg-[#111] rounded-b-xl z-30" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[30%] h-4 sm:h-5 bg-[#111] rounded-b-xl z-30" />
               
               <img 
                  src={Images.Mockup_2} 
