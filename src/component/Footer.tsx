@@ -8,18 +8,6 @@ import {
 import { Images } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
-// Brand icons were removed from lucide-react in v1.0.0, so we define them manually as SVGs
-const Facebook = ({ size = 24, className = "" }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
-const Twitter = ({ size = 24, className = "" }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-  </svg>
-);
 
 const Instagram = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -45,26 +33,38 @@ const fadeUp = (delay = 0) => ({
 });
 
 const socialLinks = [
-  { icon: Facebook,  href: "#" },
-  { icon: Twitter,   href: "#" },
+
   { icon: Instagram, href: "#" },
-  { icon: Linkedin,  href: "#" },
+  { icon: Linkedin,  href: "https://www.linkedin.com/company/swaadsetu/" },
 ];
 
 const productLinks = [
   { label: "Features", to: "/features" },
   { label: "Pricing",  to: "/pricing"  },
-  { label: "FAQ",      to: "/faq"      },
+  { label: "FAQ",      to: "/faq"      }, 
 ];
 
 const companyLinks = [
   { label: "About Us", to: "/about" },
+  { label: "About Zager",     to: "https://www.zager.in/"},
+  { label: "Contact Us",     to: "/contact" },
   { label: "Blog",     to: "/blogs" },
 ];
 
+export const footerContact = {
+  email: "connect@swaadsetu.com",
+  phone: "+91 9407655717",
+  addressLines: [
+    "Zager Digital Services,",
+    "Startup Enclave,",
+    "CSIT Durg,",
+    "Chhattisgarh 491001",
+  ],
+};
+
 const bottomLinks = [
   { label: "Home",           to: "/"              },
-  { label: "Contact",        to: "/#contact"      },
+  { label: "Contact",        to: "/contact"       },
   { label: "Privacy Policy", to: "/legal#privacy" },
   { label: "Terms of Service", to: "/legal#terms" },
   { label: "Cookie Policy",  to: "/legal#cookies" },
@@ -115,8 +115,7 @@ export function Footer() {
             </button>
 
             <p className="text-slate-400 leading-relaxed text-sm">
-              India's premier QR-based restaurant management system. Empowering
-              restaurants to deliver exceptional experiences.
+             SwaadSetu is the operating system for modern food services, helping businesses streamline operations and deliver better customer experiences.
             </p>
 
             {/* Social icons */}
@@ -198,11 +197,8 @@ export function Footer() {
                 <div className="w-7 h-7 rounded-lg bg-amber-400/10 flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin size={14} className="text-amber-400" />
                 </div>
-                <span className="text-slate-400 text-sm leading-relaxed">
-                  Zager Digital Services,<br />
-                  Startup Enclave,<br />
-                  CSIT Durg,<br />
-                  Chhattisgarh 491001
+                <span className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">
+                  {footerContact.addressLines.join("\n")}
                 </span>
               </li>
             </ul>
@@ -221,9 +217,10 @@ export function Footer() {
             <Link
               key={label}
               to={to}
-              className="text-xs text-slate-500 hover:text-amber-300 transition-colors duration-150 tracking-wide"
+              className="relative text-xs text-slate-500 hover:text-amber-300 transition-colors duration-150 tracking-wide group"
             >
               {label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400/50 transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </motion.div>
@@ -238,7 +235,7 @@ export function Footer() {
             className="opacity-70 hover:opacity-100 transition-opacity"
           >
             <img
-              src={Images.Logo}
+              src={Images.Zager}
               className="w-36 h-9 object-contain"
               loading="lazy"
               alt="Zager Digital Services"

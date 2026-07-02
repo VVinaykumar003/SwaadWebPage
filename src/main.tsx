@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from '@dr.pogodin/react-helmet'
 import './index.css'
+import './styles/feature-animations.css'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(

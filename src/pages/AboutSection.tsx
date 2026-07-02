@@ -10,17 +10,17 @@ const fadeUp = (delay = 0) => ({
 });
 
 const features = [
-  "Complete contactless ordering with QR technology",
-  "Real-time kitchen display and order management",
-  "Integrated payment gateway with UPI support",
-  "Advanced analytics and business intelligence",
+  "Smart Ordering Experience",
+  "Complete Operational Control",
+  " Real-Time Business Insights",
+  "Scalable Food Service Workflows",
 ];
 
 const AboutSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-[#060812] overflow-hidden py-24 px-4 md:px-8">
+    <section className="relative bg-[#060812] overflow-hidden py-12 md:py-8 px-12 md:px-24">
 
       {/* ── Background grid ── */}
       <div
@@ -40,38 +40,49 @@ const AboutSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
-        {/* ── Section label ── */}
-        <motion.div {...fadeUp(0)} className="flex justify-center mb-4">
-          <div className="badge badge-outline border-amber-400/40 text-amber-300 bg-amber-400/5 gap-2 px-4 py-3 text-xs font-semibold tracking-widest uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            About SwaadSetu
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* ── Left Column: Text & CTA ── */}
+          <div className="flex flex-col gap-6 text-center lg:text-left items-center lg:items-start">
+            <motion.div {...fadeUp(0)}>
+              <div className="badge badge-outline border-amber-400/40 text-amber-300 bg-amber-400/5 gap-2 px-4 py-3 text-xs font-semibold tracking-widest uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                About SwaadSetu
+              </div>
+            </motion.div>
+
+            <motion.h2 {...fadeUp(0.1)} className="text-3xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+              One Platform, {" "}
+              <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <br className="hidden lg:block" />  Complete Operations.
+              </span>
+              {/*  Management in India */}
+            </motion.h2>
+
+            <motion.p {...fadeUp(0.2)} className="text-slate-400 text-base lg:text-lg leading-relaxed font-light">
+              SwaadSetu is the operating system for modern food services, helping businesses manage ordering, billing, inventory, and daily operations through one connected platform.
+            </motion.p>
+
+            <motion.p {...fadeUp(0.25)} className="text-slate-400 text-base lg:text-lg leading-relaxed">
+             Designed for restaurants, cafes, QSRs, and food courts, SwaadSetu simplifies operations with integrated workflows and real-time business insights.
+
+            </motion.p>
+
+            <motion.div {...fadeUp(0.3)} className="mt-2">
+              <button
+                onClick={() => navigate("/about")}
+                className="btn btn-outline text-lg border-amber-400/60 text-amber-300 hover:bg-amber-400/10 hover:border-amber-400/70 transition-all duration-200 px-6 py-2 flex items-center justify-center gap-3 rounded-2xl cursor-pointer"
+              >
+                Know more
+                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+            </motion.div>
           </div>
-        </motion.div>
 
-        {/* ── Section headline ── */}
-        <motion.div {...fadeUp(0.1)} className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-            Revolutionizing{" "}
-            <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              Restaurant
-            </span>
-            <br className="hidden sm:block" /> Management in India
-          </h2>
-          <p className="mt-5 text-slate-400 text-base lg:text-lg max-w-2xl mx-auto leading-relaxed font-light">
-            From street food stalls to fine dining — we empower every food business
-            with QR menus, digital systems, and contactless dining solutions.
-          </p>
-        </motion.div>
-
-        {/* ── Main content: single centered column ── */}
-        <div className="max-w-3xl mx-auto flex flex-col gap-8">
-
-          {/* Body text */}
-          <motion.p {...fadeUp(0.2)} className="text-slate-400 text-base lg:text-lg leading-relaxed text-center">
-            Swaad Setu is India's most comprehensive restaurant management platform,
-            designed for Indian restaurants of all sizes. We empower every food
-            business with cutting-edge QR technology and contactless dining solutions.
-          </motion.p>
+          {/* ── Right Column: Features & Testimonial ── */}
+          <div className="flex flex-col gap-8">
 
           {/* Feature list — two columns on md+ */}
           <motion.ul {...fadeUp(0.28)} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -93,19 +104,6 @@ const AboutSection = () => {
               </motion.li>
             ))}
           </motion.ul>
-
-          {/* CTA */}
-          <motion.div {...fadeUp(0.48)} className="flex justify-center">
-            <button
-              onClick={() => navigate("/about")}
-              className="btn btn-outline text-lg border-amber-400/60 text-amber-300 hover:bg-amber-400/10 hover:border-amber-400/70 transition-all duration-200 px-3 py-2 flex items-center justify-center gap-3 rounded-2xl cursor-pointer"
-            >
-              Know more
-              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </button>
-          </motion.div>
 
           {/* Divider */}
           <motion.div
@@ -147,11 +145,12 @@ const AboutSection = () => {
               </div>
             </div>
           </motion.div>
+            </div>
 
         </div>
 
-        {/* ── Bottom stats bar ── */}
-        <motion.div
+        {/* ── Bottom stats bar (Hidden for new company) ── */}
+        {/* <motion.div
           {...fadeUp(0.3)}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-amber-400/10 rounded-2xl overflow-hidden border border-amber-400/10"
         >
@@ -173,7 +172,7 @@ const AboutSection = () => {
               </span>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

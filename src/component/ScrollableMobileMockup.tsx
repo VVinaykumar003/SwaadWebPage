@@ -9,8 +9,11 @@ const ScrollableMobileMockup: React.FC<ScrollableMobileMockupProps> = ({
   hero,
 }) => {
   return (
-    <div className="mx-auto w-[260px] sm:w-[280px] lg:w-[300px] ">
-      <div className="relative mx-auto h-[520px] w-full overflow-hidden rounded-[2.5rem] border-[14px] border-black bg-black shadow-[0_20px_60px_rgba(0,0,0,0.3)] ">
+    <div className="mx-auto w-[260px] sm:w-[280px] lg:w-[300px] relative group">
+      {/* Glow effect behind mockup */}
+      <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+      <div className="relative mx-auto h-[520px] w-full overflow-hidden rounded-[2.5rem] border-[14px] border-[#0a0a0a] bg-black shadow-[0_20px_60px_rgba(251,191,36,0.15)] ring-1 ring-amber-400/20 group-hover:ring-amber-400/40 transition-all duration-500">
         {/* small label */} 
         {/*   */}
         {/* <div className="absolute left-2 top-2 z-20 rounded bg-black/70 px-2 py-0.5 text-[10px] font-medium text-white">

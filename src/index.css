@@ -17,6 +17,24 @@
 body {
   margin: 0;
   padding: 0;
-
 }
+
+@layer base {
+  button, 
+  a, 
+  input[type="button"], 
+  input[type="submit"], 
+  input[type="reset"], 
+  [role="button"] {
+    cursor: pointer;
+  }
+  
+  /* Prevent pointer if disabled */
+  button:disabled,
+  input:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
+
 

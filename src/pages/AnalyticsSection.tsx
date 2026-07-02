@@ -277,26 +277,24 @@ export function AnalyticsSection() {
         </motion.div>
 
         {/* ── Feature cards ── */}
-        <motion.div {...fadeUp(0.25)} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <motion.div {...fadeUp(0.25)} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
               {...fadeUp(0.28 + i * 0.08)}
-              className="group rounded-2xl p-6 border border-white/[0.07] bg-white/[0.03] hover:border-amber-400/20 hover:bg-white/[0.06] hover:-translate-y-1 transition-all duration-300 cursor-default overflow-hidden relative"
+              className="relative bg-white/[0.02] border border-white/10 hover:border-amber-400/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(251,191,36,0.1)] hover:bg-white/[0.04] group rounded-3xl overflow-hidden backdrop-blur-sm cursor-default"
             >
-              {/* Corner glow */}
-              <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-amber-400/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-amber-400/10 border border-amber-400/20 text-amber-400 group-hover:scale-110 transition-transform duration-300">
-                <f.Icon size={18} />
+              <div className="p-8 relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 text-xl group-hover:bg-amber-400/20 group-hover:scale-110 transition-all duration-300 shadow-[0_0_10px_rgba(251,191,36,0.1)] shrink-0">
+                    <f.Icon size={20} />
+                  </div>
+                  <h3 className="text-white text-lg font-bold tracking-wide leading-tight">{f.title}</h3>
+                </div>
+                <p className="text-slate-400 text-sm leading-relaxed font-light flex-grow">{f.desc}</p>
               </div>
-              <h3 className="text-base font-bold text-white mb-2">{f.title}</h3>
-              <p className="text-sm text-slate-500 leading-relaxed group-hover:text-slate-400 transition-colors">
-                {f.desc}
-              </p>
-
-              {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
             </motion.div>
           ))}
         </motion.div>

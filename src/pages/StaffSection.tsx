@@ -7,6 +7,7 @@ import {
   MonitorCheck,
   LayoutGrid,
   UtensilsCrossed,
+  BellRing,
 } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
@@ -21,77 +22,87 @@ const features = [
     icon: ClipboardList,
     title: "Order Management",
     description:
-      "Accept or reject orders from any table in real-time. Complete control over your restaurant's workflow at a glance.",
+      "Manage and process orders in real-time across tables and service channels.",
     color: "#FFBE00",
     bg: "rgba(255,190,0,0.1)",
-    size: "lg", // spans 2 cols
-    tag: "Core",
+    size: "lg",
+    tag: "OPERATIONS",
   },
   {
     icon: Activity,
     title: "Live Order Tracking",
     description:
-      "Monitor all orders from pending to delivered. Real-time visibility for smooth, timely service.",
+      "Track every order from placement to fulfillment with real-time visibility.",
     color: "#22C55E",
     bg: "rgba(34,197,94,0.1)",
     size: "sm",
-    tag: "Live",
+    tag: "CUSTOMER",
   },
   {
     icon: Receipt,
     title: "Billing System",
     description:
-      "Generate accurate bills with extras, taxes, and discounts. Simplify payment for staff and guests.",
+      "Generate accurate digital bills with taxes, discounts, and payment records.",
     color: "#3B82F6",
     bg: "rgba(59,130,246,0.1)",
     size: "sm",
-    tag: "Finance",
+    tag: "BILLING",
   },
   {
     icon: MonitorCheck,
     title: "Kitchen Display",
     description:
-      "Dedicated kitchen view that organises orders by time and priority. The chef always knows what's next.",
+      "Keep kitchen teams synchronized with organized and real-time order queues.",
     color: "#F59E0B",
     bg: "rgba(245,158,11,0.1)",
     size: "sm",
-    tag: "Kitchen",
+    tag: "KITCHEN",
   },
   {
     icon: LayoutGrid,
     title: "Table Management",
     description:
-      "Visualise occupancy, open sessions, and assignments in one unified view.",
+      "Monitor occupancy, manage tables, and optimize customer seating workflows.",
     color: "#8B5CF6",
     bg: "rgba(139,92,246,0.1)",
     size: "sm",
-    tag: "Floor",
+    tag: "FLOOR MANAGEMENT",
   },
   {
     icon: UtensilsCrossed,
-    title: "Dine-In vs Takeout",
+    title: "Dine-In vs Takeaway",
     description:
-      "Separate tabs for Dine-In and Takeaway. Staff always know whether to plate or pack.",
+      "Separate dine-in and takeaway workflows for faster and error-free service.",
     color: "#EC4899",
     bg: "rgba(236,72,153,0.1)",
     size: "lg",
-    tag: "Workflow",
+    tag: "ORDER FLOW",
+  },
+  {
+    icon: BellRing,
+    title: "Instant Alerts",
+    description:
+      "Receive instant notifications for orders, payments, and customer requests.",
+    color: "#06B6D4",
+    bg: "rgba(6,182,212,0.1)",
+    size: "sm",
+    tag: "SERVICE DESK",
   },
 ];
 
 /* ── Animated number ticker ── */
-const stats = [
-  { value: "6", label: "Powerful modules" },
-  { value: "3s", label: "Avg. order acceptance" },
-  { value: "40%", label: "Fewer service errors" },
-  { value: "∞", label: "Tables supported" },
-];
+// const stats = [
+//   { value: "6", label: "Powerful modules" },
+//   { value: "3s", label: "Avg. order acceptance" },
+//   { value: "40%", label: "Fewer service errors" },
+//   { value: "∞", label: "Tables supported" },
+// ];
 
 const StaffSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-[#060812] overflow-hidden py-24">
+    <section className="relative bg-[#060812] overflow-hidden py-12">
 
       {/* ── Background grid ── */}
       <div
@@ -112,21 +123,20 @@ const StaffSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
 
         {/* ── Header ── */}
-        <motion.div {...fadeUp(0)} className="text-center mb-16">
+        <motion.div {...fadeUp(0)} className="flex flex-col items-center lg:items-start text-center lg:text-left mb-16">
           <div className="inline-flex items-center gap-2 badge badge-outline border-amber-400/40 text-amber-300 bg-amber-400/5 px-4 py-3 text-xs font-semibold tracking-widest uppercase mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
             Staff Dashboard
           </div>
-          <h2 className="text-4xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-            Give Your Team A{" "}
+          <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+           Run Every Food Business {" "}
             <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              Clean, Fast
+              Operation From 
             </span>{" "}
-            Workspace
+            One Dashboard
           </h2>
-          <p className="mt-5 text-slate-400 text-base lg:text-lg max-w-2xl mx-auto leading-relaxed font-light">
-            Every screen is built to reduce taps, cut confusion, and keep
-            service moving — from order routing to table management.
+          <p className="mt-5 text-slate-400 text-base lg:text-lg max-w-2xl leading-relaxed font-light">
+           From order routing to billing and table management, everything stays connected.
           </p>
         </motion.div>
 
@@ -150,14 +160,20 @@ const StaffSection = () => {
 
               {/* Top row: icon + tag */}
               <div className="flex items-start justify-between">
+                <div className="flex items-center gap-4">
+
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
                   style={{ background: f.bg, border: `1px solid ${f.color}22` }}
                 >
                   <f.icon size={20} style={{ color: f.color }} />
                 </div>
+                 <h3 className="text-base font-bold text-white group-hover:text-white transition-colors">
+                  {f.title}
+                </h3>
+                </div>
                 <span
-                  className="text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                  className="text-[10px] font-semibold tracking-widest uppercase px-2.5 py-2 rounded-full"
                   style={{ background: f.bg, color: f.color }}
                 >
                   {f.tag}
@@ -166,9 +182,7 @@ const StaffSection = () => {
 
               {/* Text */}
               <div className="flex flex-col gap-1.5 flex-1">
-                <h3 className="text-base font-bold text-white group-hover:text-white transition-colors">
-                  {f.title}
-                </h3>
+               
                 <p className="text-sm text-slate-500 leading-relaxed group-hover:text-slate-400 transition-colors">
                   {f.description}
                 </p>
@@ -194,8 +208,8 @@ const StaffSection = () => {
           ))}
         </div>
 
-        {/* ── Stats strip ── */}
-        <motion.div
+        {/* ── Stats strip (Hidden for new company) ── */}
+        {/* <motion.div
           {...fadeUp(0.3)}
           className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.05] rounded-2xl overflow-hidden border border-white/[0.07]"
         >
@@ -209,7 +223,7 @@ const StaffSection = () => {
               </span>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* ── CTA ── */}
         <motion.div {...fadeUp(0.35)} className="flex flex-col sm:flex-row gap-4 justify-center mt-12">

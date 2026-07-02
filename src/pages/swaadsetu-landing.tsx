@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Hero from "./Hero";
 import { Footer } from "../component/Footer";
 import { CTASection } from "../component/cta-section";
 import { CustomerSection } from "./customer-section";
-import { AnalyticsSection } from "./AnalyticsSection";
+// import { AnalyticsSection } from "./AnalyticsSection";
 import Navbar from "../component/Navbar";
-import AboutSection from "./AboutSection"; 
+import AboutSection from "./AboutSection";
 
 
 import { Helmet } from "@dr.pogodin/react-helmet";
 // import MobileFloatingButton from "../component/ui/MobileFolatingButton";
-import StaffSection from "../pages/StaffSection";
+import StaffSection from "./StaffSection";
 
 const SwaadsetuLanding: React.FC = () => {
-  const [, setActiveSection] = useState("home");
-
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observerOptions = {
@@ -35,31 +33,6 @@ const SwaadsetuLanding: React.FC = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
-
-  // Active section tracking on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "features", "about", "contact"];
-      const scrollPosition = window.scrollY + 120;
-
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const { offsetTop, clientHeight } = section;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + clientHeight
-          ) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -132,8 +105,8 @@ const SwaadsetuLanding: React.FC = () => {
           {/* Staff Section */}
           <StaffSection />
 
-          {/* AnalyticsSection */}
-          <AnalyticsSection />
+          {/* AnalyticsSection (Hidden as per user request to hide data/stats) */}
+          {/* <AnalyticsSection /> */}
         </div>
 
         <div id="contact">

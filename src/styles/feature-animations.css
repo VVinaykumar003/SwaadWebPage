@@ -1,0 +1,28 @@
+@keyframes slide {
+  0% { transform: translateX(-40%) skewX(-10deg); }
+  50% { transform: translateX(40%) skewX(-10deg); }
+  100% { transform: translateX(-40%) skewX(-10deg); }
+}
+
+/* Small helper for modal backdrop blur on supported browsers */
+.feature-backdrop {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Micro-interactions for feature cards */
+.glass-accent {
+  transition: box-shadow 280ms cubic-bezier(.22,1,.36,1), transform 280ms;
+}
+
+.glass-accent:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.feature-badge {
+  transition: transform 300ms, opacity 300ms;
+}
+
+.feature-badge:hover {
+  transform: translateY(-3px) scale(1.02);
+}
